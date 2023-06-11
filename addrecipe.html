@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="bg-primary">
+    <div class = "container bg-secondary p-0 pb-5">
+        <nav class=" navbar navbar-expand-lg container navbar-dark bg-dark">
+            <div class="container-fluid d-flex justify-content-end">
+                <a class="navbar-brand fs-4 fw-bolder pe-3" href="index.html">
+                    <img class="d-inline-block" src="https://www.recipeunlimited.com/content/dam/cara/en/recipe-image-library/images/recipe-share.jpg"  width="75" height="45" alt="">
+                    Hennen Recipes
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recipes.html">Recipes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="addrecipe.html">Add Recipes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ingredients.html">Ingredients</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        
+        <div class="bg-light p-2 mt-4 ml-5 mr-5 mb-0">
+            <h1 id = "recipeName" class="text-center">Recipe table</h1>
+        </div>
+        <div class="bg-light p-2 ml-5 mr-5 mb-0">
+            <h4 class = "text-center">Ingredients</h1>
+            <table id="recipeTable" class = "table table-bordered container-fluid table-hover table-secondary">
+                <tr>
+                    <th class="col-6">Ingredient Name</th>
+                    <th class="col-2">Quantity</th>
+                    <th class="col-4">Measurement</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="row p-2 mt-4 ml-5 mr-5 mb-0 ">
+            <form id="recipeHeaderForm" class="bg-light pt-5 pb-5 col-sm-6">
+                <h4 class="text-center">Update the Recipe Name</h4>
+                <div class="form-group">
+                    <label for="recipeNameInputLabel">Recipe Name</label>
+                    <input type="text" class="form-control" id="recipeNameInput" placeholder="Enter Recipe Name">
+                </div>
+                <button id="recipeSubmit" type="button" class="btn btn-primary">Submit</button>
+            </form>
+
+            <form id="IngredientForm" class="bg-light pt-5 pb-5 col-sm-6">
+                <h4 class="text-center">Enter the Ingredient</h4>
+                <div class="form-group container-fluid">
+                    <label for="ingredientNameInputLabel">Ingredient Name</label>
+                    <input type="text" class="form-control" id="ingredientNameInput" placeholder="Enter Ingredient Name">
+                </div>
+                <div class="form-group container-fluid">
+                    <label for="ingredientQuantityInputLabel">Ingredient Quantity</label>
+                    <input type="number" class="form-control" id="ingredientQuantityInput" placeholder="Enter Ingredient Quantity">
+                </div>
+                <div class="form-group container">
+                    <label for="ingredientMeasurementTypeLabel" class="col-12">Measurement Type</label>
+                    <select id="ingredientMeasurementTypeSelect" class="form-select col-6" aria-label="Default select example" placeholder="Ingredient Measurement">
+                        <option value="teaspoon (tsp)">teaspoon (tsp)</option>
+                        <option value="tablespoon (tbsp)">tablespoon (tbsp)</option>
+                        <option value="fluid ounce (fl oz)">fluid ounce (fl oz)</option>
+                        <option value="cup">cup</option>
+                        <option value="pint">pint</option>
+                        <option value="quart">quart</option>
+                        <option value="gallon">gallon</option>
+                        <option value="liter (ml)">liter (ml)</option>
+                        <option value="pound(lb)">pound(lb)</option>
+                        <option value="ounce (oz)">ounce (oz)</option>
+                        <option value="gram (g)">gram (g)</option>
+                        <option value="kilogram (kg)">kilogram (kg)</option>
+                        <option value="Pcs">Pcs</option>
+                    </select>
+                </div>
+                <button id = "ingredientSubmit" type="button" class="btn btn-primary container-fluid">Submit</button>
+            </form>
+        <div>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src = "node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    
+    <script src = "scripts/addRecipe.js"></script>
+</body>
+</html>
