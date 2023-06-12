@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body class="bg-primary">
-    <div class = "container bg-secondary p-0 pb-5">
+    <div class = "container bg-secondary-subtle p-0 pb-5">
         <nav class=" navbar navbar-expand-lg container navbar-dark bg-dark">
-            <div class="container-fluid d-flex justify-content-end">
+            <div class="container-fluid">
                 <a class="navbar-brand fs-4 fw-bolder pe-3" href="index.html">
                     <img class="d-inline-block" src="https://www.recipeunlimited.com/content/dam/cara/en/recipe-image-library/images/recipe-share.jpg"  width="75" height="45" alt="">
                     Hennen Recipes
@@ -19,7 +19,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="index.html">Home</a>
                         </li>
@@ -39,32 +39,59 @@
 
 
 
+
         
-        <div class="bg-light p-2 mt-4 ml-5 mr-5 mb-0">
-            <h1 id = "recipeName" class="text-center">Recipe table</h1>
+        <div class="row justify-content-center pt-3">
+            <div class=" col-4">
+                <h1 id = "recipeName" class="text-center fw-bolder">RecipeName</h1>
+            </div>
         </div>
-        <div class="bg-light p-2 ml-5 mr-5 mb-0">
+        <!-- <div class=" p-2 ml-5 mr-5 mb-0">
             <h4 class = "text-center">Ingredients</h1>
             <table id="recipeTable" class = "table table-bordered container-fluid table-hover table-secondary">
                 <tr>
-                    <th class="col-6">Ingredient Name</th>
+                    <th class="col-5">Ingredient Name</th>
                     <th class="col-2">Quantity</th>
-                    <th class="col-4">Measurement</th>
+                    <th class="col-3">Measurement</th>
+                    <th class="col-2">Actions</th>
+                </tr>
+                <tr>
+                    <td colspan="4"><Button type="button" class="btn text-center btn-primary col-12">Add Ingredient</Button></th>
+                </tr>
+            </table>
+        </div> -->
+        <div class=" p-2 ml-5 mr-5 mb-0">
+            <table id="recipeTable" class = "table table-hover table-secondary">
+                <tr>
+                   <th colspan="4" class = "text-center fs-4 fw-bold">Ingredients</th> 
+                </tr>
+                <tr>
+                    <th class="col-5 text-center">Ingredient Name</th>
+                    <th class="col-2 text-center">Quantity</th>
+                    <th class="col-3 text-center">Measurement</th>
+                    <th class="col-2 text-center">Actions</th>
+                </tr>
+                <tr>
+                    <td colspan="4"><Button type="button" class="btn text-center btn-primary col-12">Add Ingredient</Button></th>
                 </tr>
             </table>
         </div>
 
         <div class="row p-2 mt-4 ml-5 mr-5 mb-0 ">
-            <form id="recipeHeaderForm" class="bg-light pt-5 pb-5 col-sm-6">
-                <h4 class="text-center">Update the Recipe Name</h4>
+            <form id="recipeHeaderForm" class=" pt-5 pb-5 col-sm-6">
+                <h4 class="text-center">Update the Recipe Header</h4>
                 <div class="form-group">
                     <label for="recipeNameInputLabel">Recipe Name</label>
                     <input type="text" class="form-control" id="recipeNameInput" placeholder="Enter Recipe Name">
                 </div>
+                <div class="form-group">
+                    <label for="recipeDescriptionInputLabel">Recipe Name</label>
+                    <input type="text" class="form-control" id="recipeDescriptionInput" placeholder="Describe the recipe">
+                </div>
                 <button id="recipeSubmit" type="button" class="btn btn-primary">Submit</button>
             </form>
 
-            <form id="IngredientForm" class="bg-light pt-5 pb-5 col-sm-6">
+            <form id="IngredientForm" class=" pt-5 pb-5 col-sm-6">
                 <h4 class="text-center">Enter the Ingredient</h4>
                 <div class="form-group container-fluid">
                     <label for="ingredientNameInputLabel">Ingredient Name</label>
@@ -92,7 +119,9 @@
                         <option value="Pcs">Pcs</option>
                     </select>
                 </div>
-                <button id = "ingredientSubmit" type="button" class="btn btn-primary container-fluid">Submit</button>
+                <div class = "row justify-content-center pt-2">
+                    <button id = "ingredientSubmit" type="button" class="btn btn-primary col-11">Submit</button>
+                </div>
             </form>
         <div>
     </div>
