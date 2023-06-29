@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add Recipes</title>
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body class="bg-primary">
-    <div class = "container bg-secondary-subtle p-0 pb-5">
+    <div class = "container container-sm bg-secondary-subtle p-0 pb-5">
+
+        <!-- Navigation Bar -->
         <nav class=" navbar navbar-expand-lg container navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand fs-4 fw-bolder pe-3" href="index.html">
@@ -32,98 +35,75 @@
                         <li class="nav-item">
                             <a class="nav-link" href="ingredients.html">Ingredients</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="addIngredients.html">Add ingredients</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
+        <!-- Recipe Ingredients Section -->
+        <div class="row justify-content-center pt-5">
 
-
-
-        
-        <div class="row justify-content-center pt-3">
-            <div class=" col-4">
-                <h1 id = "recipeName" class="text-center fw-bolder">RecipeName</h1>
+            <div class="col-md-5 justify-content-center">
+                <h1 id = "recipeTitle" class="fw-bolder me-3 ms-3">Recipe</h1>
+                <input id="recipeInput" type="text" class='align-content-center col-6 me-3 ms-3' placeholder="recipeName">
+                
+                <br>
+                
+                <h4 id= "recipeDescriptionh1" class='fw-bold me-3 ms-3 pt-3'>Description</h4>
+                <textarea id="recipeDescriptionText" class="col-6 me-3 ms-3"></textarea>
             </div>
+            <div class="col-md-3 imageDiv align-items-stretch me-3 ms-3">
+
+                <label for="file-input">
+                    <h4>FileImage - Not Yet Implemented</h1>
+                </label>
+                
+                
+            </div>
+            
         </div>
-        <!-- <div class=" p-2 ml-5 mr-5 mb-0">
-            <h4 class = "text-center">Ingredients</h1>
-            <table id="recipeTable" class = "table table-bordered container-fluid table-hover table-secondary">
-                <tr>
-                    <th class="col-5">Ingredient Name</th>
-                    <th class="col-2">Quantity</th>
-                    <th class="col-3">Measurement</th>
-                    <th class="col-2">Actions</th>
-                </tr>
-                <tr>
-                    <td colspan="4"><Button type="button" class="btn text-center btn-primary col-12">Add Ingredient</Button></th>
-                </tr>
-            </table>
-        </div> -->
-        <div class=" p-2 ml-5 mr-5 mb-0">
-            <table id="recipeTable" class = "table table-hover table-secondary">
+
+
+        <div class=" p-2 me-5 ms-5 mb-0 row">
+            <table id="recipeTable" class = "table table-secondary">
                 <tr>
                    <th colspan="4" class = "text-center fs-4 fw-bold">Ingredients</th> 
                 </tr>
                 <tr>
-                    <th class="col-5 text-center">Ingredient Name</th>
-                    <th class="col-2 text-center">Quantity</th>
-                    <th class="col-3 text-center">Measurement</th>
-                    <th class="col-2 text-center">Actions</th>
+                    <th class="col-6 text-center">Ingredient</th>
+                    <th class="col-1 text-center">Quantity</th>
+                    <th class="col-4 text-center">Measurement</th>
+                    <th class="col-1 text-center"></th>
                 </tr>
-                <tr>
-                    <td colspan="4"><Button type="button" class="btn text-center btn-primary col-12">Add Ingredient</Button></th>
+                <tr id = 'addIngredientRow'>
+                    <td colspan="4"><Button type="button" id='addIngredientButton' class="btn text-center btn-primary col-12">Add Ingredient</Button></th>
                 </tr>
             </table>
         </div>
 
-        <div class="row p-2 mt-4 ml-5 mr-5 mb-0 ">
-            <form id="recipeHeaderForm" class=" pt-5 pb-5 col-sm-6">
-                <h4 class="text-center">Update the Recipe Header</h4>
-                <div class="form-group">
-                    <label for="recipeNameInputLabel">Recipe Name</label>
-                    <input type="text" class="form-control" id="recipeNameInput" placeholder="Enter Recipe Name">
-                </div>
-                <div class="form-group">
-                    <label for="recipeDescriptionInputLabel">Recipe Name</label>
-                    <input type="text" class="form-control" id="recipeDescriptionInput" placeholder="Describe the recipe">
-                </div>
-                <button id="recipeSubmit" type="button" class="btn btn-primary">Submit</button>
-            </form>
+        <!-- notes and steps section, will consolidate to one column outyside of large viewport -->
+        <div class="row me-4 ms-4">
+            <!-- Recipe Steps Section -->
+            <div class="col-lg-6 justify-content-center">
+                <h3 class="text-center">Steps</h3>
+                <button id='addStepButton' type="button" class="btn btn-primary text-center align-content-center col-12 me-3 ms-4">Add Step</button>
+            </div>
+            <!-- This is the Notes section -->
+            <div class="col-lg-6">
+                <h3 class="text-center">Notes</h3>
+                <button id='addNoteButton' type="button" class="btn btn-primary text-center align-content-center col-12 me-5 ms-3">Add Note</button>
+            </div>
+        </div>
 
-            <form id="IngredientForm" class=" pt-5 pb-5 col-sm-6">
-                <h4 class="text-center">Enter the Ingredient</h4>
-                <div class="form-group container-fluid">
-                    <label for="ingredientNameInputLabel">Ingredient Name</label>
-                    <input type="text" class="form-control" id="ingredientNameInput" placeholder="Enter Ingredient Name">
-                </div>
-                <div class="form-group container-fluid">
-                    <label for="ingredientQuantityInputLabel">Ingredient Quantity</label>
-                    <input type="number" class="form-control" id="ingredientQuantityInput" placeholder="Enter Ingredient Quantity">
-                </div>
-                <div class="form-group container">
-                    <label for="ingredientMeasurementTypeLabel" class="col-12">Measurement Type</label>
-                    <select id="ingredientMeasurementTypeSelect" class="form-select col-6" aria-label="Default select example" placeholder="Ingredient Measurement">
-                        <option value="teaspoon (tsp)">teaspoon (tsp)</option>
-                        <option value="tablespoon (tbsp)">tablespoon (tbsp)</option>
-                        <option value="fluid ounce (fl oz)">fluid ounce (fl oz)</option>
-                        <option value="cup">cup</option>
-                        <option value="pint">pint</option>
-                        <option value="quart">quart</option>
-                        <option value="gallon">gallon</option>
-                        <option value="liter (ml)">liter (ml)</option>
-                        <option value="pound(lb)">pound(lb)</option>
-                        <option value="ounce (oz)">ounce (oz)</option>
-                        <option value="gram (g)">gram (g)</option>
-                        <option value="kilogram (kg)">kilogram (kg)</option>
-                        <option value="Pcs">Pcs</option>
-                    </select>
-                </div>
-                <div class = "row justify-content-center pt-2">
-                    <button id = "ingredientSubmit" type="button" class="btn btn-primary col-11">Submit</button>
-                </div>
-            </form>
-        <div>
+        <div class="container d-flex justify-content-end p-5 col-12">
+
+            <button id="recipeSubmit" type="submit" class="btn btn-primary col-3 justify-content-end">Save Recipe</button>
+        </div>
+
+
     </div>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src = "node_modules/bootstrap/dist/js/bootstrap.js"></script>
